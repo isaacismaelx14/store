@@ -3,5 +3,21 @@
         "activityBar.background": "#5C0E1E",
         "titleBar.activeBackground": "#81142A",
         "titleBar.activeForeground": "#FEFBFC"
-    }
+    },
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "local store_db",
+            "group": "store_db",
+            "database": "store_db",
+            "username": "root",
+            "password": ""
+        }
+    ]
 }
