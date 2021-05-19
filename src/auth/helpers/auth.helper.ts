@@ -19,7 +19,7 @@ export interface ILoginData {
 
 export interface IAuthContext {
   user: IUser | null;
-  login: (a: ILoginData) => void;
+  login: any;
 }
 
 const defaultFuncion = (fun: string) =>
