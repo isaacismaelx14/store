@@ -4,13 +4,14 @@ import { CgShoppingCart } from "react-icons/cg";
 import SearchBar from "./SearchBar";
 import HeaderTitle from "./HeaderTitle";
 import useAuth from "../../../auth/useAuth";
+import ShowUsername from "../../ShowUsername";
 
 interface IProps {
   nameApp: string;
 }
 
 export default function NavLinks({ nameApp }: IProps) {
-  const { isLoggedIn } = useAuth();
+  const { isLoggedIn, logout } = useAuth();
   return (
     <>
       <div className="nav__main-menu">
@@ -51,11 +52,12 @@ export default function NavLinks({ nameApp }: IProps) {
               to={routes.profile.details}
               className="nav__item header__nav-item btn btn-left"
               activeClassName="nav__item-active"
-              children="User"
+              children={<ShowUsername />}
             />
             <span
               className="nav__item header__nav-item btn btn-right"
               children="Logout"
+              onClick={logout}
             />
           </>
         ) : (

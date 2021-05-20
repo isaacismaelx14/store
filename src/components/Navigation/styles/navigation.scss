@@ -221,7 +221,7 @@ $borderBotton: $borderBottonHeight solid $color1;
 
 // Mobile devices
 
-@media (min-width: 300px) and (max-width: 767px) {
+@media (min-width: 300px) and (max-width: 860px) {
   $searchAreaHeith: 50px;
 
   .header {
@@ -267,7 +267,7 @@ $borderBotton: $borderBottonHeight solid $color1;
   }
 }
 //Table devices
-@media (min-width: 768px) {
+@media (min-width: 860px) {
   $borderBottonHeight: 5px;
   $borderBotton: $borderBottonHeight solid $color1;
   .header {
@@ -381,7 +381,7 @@ $borderBotton: $borderBottonHeight solid $color1;
 
 // Pc and more devices
 
-@media (min-width: 1000px) {
+@media (min-width: 1150px) {
   .header {
     .sm,
     .mobile,

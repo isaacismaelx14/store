@@ -21,6 +21,7 @@ export interface IAuthContext {
   user: IUser | null;
   login: any;
   isLoggedIn: boolean;
+  logout: any;
 }
 
 const defaultFuncion = (fun: string) =>
@@ -29,5 +30,6 @@ const defaultFuncion = (fun: string) =>
 export const DefaultValue: IAuthContext = {
   user: null,
   login: () => defaultFuncion("login"),
+  logout: () => defaultFuncion("logout"),
   isLoggedIn: false,
 };
