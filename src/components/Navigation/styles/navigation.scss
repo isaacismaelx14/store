@@ -180,9 +180,12 @@ $borderBotton: $borderBottonHeight solid $color1;
   }
 }
 
-@media (max-width: 399px) {
+//SM Devices
+@media (max-width: 300px) {
+  $header-height: 60px;
   .header {
     border-bottom: $borderBotton;
+    height: $header-height;
   }
   .header {
     .nav__no-mobile,
@@ -216,7 +219,9 @@ $borderBotton: $borderBottonHeight solid $color1;
   }
 }
 
-@media (min-width: 399px) and (max-width: 767px) {
+// Mobile devices
+
+@media (min-width: 300px) and (max-width: 767px) {
   $searchAreaHeith: 50px;
 
   .header {
@@ -261,7 +266,7 @@ $borderBotton: $borderBottonHeight solid $color1;
     }
   }
 }
-
+//Table devices
 @media (min-width: 768px) {
   $borderBottonHeight: 5px;
   $borderBotton: $borderBottonHeight solid $color1;
@@ -372,6 +377,8 @@ $borderBotton: $borderBottonHeight solid $color1;
     }
   }
 }
+
+// Pc and more devices
 
 @media (min-width: 1000px) {
   .header {
