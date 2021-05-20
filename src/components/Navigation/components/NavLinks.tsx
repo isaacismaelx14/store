@@ -3,12 +3,14 @@ import { routes } from "../../../helpers/routes.helper";
 import { CgShoppingCart } from "react-icons/cg";
 import SearchBar from "./SearchBar";
 import HeaderTitle from "./HeaderTitle";
+import useAuth from "../../../auth/useAuth";
 
 interface IProps {
   nameApp: string;
 }
 
 export default function NavLinks({ nameApp }: IProps) {
+  const { isLoggedIn } = useAuth();
   return (
     <>
       <div className="nav__main-menu">
@@ -43,30 +45,37 @@ export default function NavLinks({ nameApp }: IProps) {
           <span className="">Cart</span>
         </NavLink>
         {/* Rigth */}
-        {/* <NavLink
-          to={routes.login}
-          className="nav__item header__nav-item btn btn-left"
-          activeClassName="nav__item-active"
-          children="Login"
-          exact
-        />
-        <NavLink
-          to={routes.register}
-          className="nav__item header__nav-item btn btn-right"
-          activeClassName="nav__item-active"
-          children="Register"
-          exact
-        /> */}
-        <NavLink
-          to={routes.profile.details}
-          className="nav__item header__nav-item btn btn-left"
-          activeClassName="nav__item-active"
-          children="User"
-        />
-        <span
-          className="nav__item header__nav-item btn btn-right"
-          children="Logout"
-        />
+        {isLoggedIn ? (
+          <>
+            <NavLink
+              to={routes.profile.details}
+              className="nav__item header__nav-item btn btn-left"
+              activeClassName="nav__item-active"
+              children="User"
+            />
+            <span
+              className="nav__item header__nav-item btn btn-right"
+              children="Logout"
+            />
+          </>
+        ) : (
+          <>
+            <NavLink
+              to={routes.login}
+              className="nav__item header__nav-item btn btn-left"
+              activeClassName="nav__item-active"
+              children="Login"
+              exact
+            />
+            <NavLink
+              to={routes.register}
+              className="nav__item header__nav-item btn btn-right"
+              activeClassName="nav__item-active"
+              children="Register"
+              exact
+            />{" "}
+          </>
+        )}
       </div>
     </>
   );
