@@ -1,5 +1,5 @@
 import "./styles/navigation.scss";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useCallback, useEffect, useRef } from "react";
 import NavLinks from "./components/NavLinks";
 import { TiThMenu } from "react-icons/ti";
