@@ -327,6 +327,7 @@ $borderBotton: $borderBottonHeight solid $color1;
         gap: 20px;
       }
       .nav__item-active,
+      .icon:hover,
       .nav__item:hover {
         color: $color2;
         border: none;
