@@ -75,7 +75,7 @@ export default function NavLinks({ nameApp }: IProps) {
               activeClassName="nav__item-active"
               children="Register"
               exact
-            />{" "}
+            />
           </>
         )}
       </div>

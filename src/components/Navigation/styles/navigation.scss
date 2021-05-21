@@ -1,10 +1,6 @@
-$header-height: 50px;
-$title-size: 30px;
-$backgroundColor: #030016;
+@import "../../../styles/variables.scss";
 
-$color1: rgb(186, 47, 47);
-$color2: rgb(189, 59, 59);
-$color3: rgb(111, 18, 18);
+$title-size: 30px;
 
 $borderBottonHeight: 2px;
 $borderBotton: $borderBottonHeight solid $color1;
@@ -14,7 +10,10 @@ $borderBotton: $borderBottonHeight solid $color1;
   height: $header-height;
   display: flex;
   align-items: center;
-  width: 100vw;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 99999;
 }
 
 .header {
@@ -41,10 +40,6 @@ $borderBotton: $borderBottonHeight solid $color1;
     font-size: $title-size;
     font-weight: 100;
     letter-spacing: 3px;
-  }
-  .container {
-    margin: auto;
-    width: 90%;
   }
 
   .header__container {
@@ -98,25 +93,12 @@ $borderBotton: $borderBottonHeight solid $color1;
   }
 }
 
-.btn {
-  text-align: center;
-  padding: 4px 15px;
-}
-
-.btn-left {
-  border-radius: 10px 0 0 10px;
-}
-
-.btn-right {
-  border-radius: 0 10px 10px 0;
-}
-
 .nav__mobile {
-  position: absolute;
+  position: fixed;
   z-index: 999999;
   height: calc(100vh - #{$header-height});
   background: $backgroundColor;
-  width: 100vw;
+  width: 100%;
   top: $header-height;
   left: 0;
   opacity: 1;
@@ -126,6 +108,7 @@ $borderBotton: $borderBottonHeight solid $color1;
   justify-content: space-between;
   align-items: center;
   transition: left 0.4s, opacity 0.3s, visibility 0.3s linear;
+  overflow-y: auto;
 }
 
 .nav__mobile {
@@ -140,7 +123,8 @@ $borderBotton: $borderBottonHeight solid $color1;
   .nav__last-menu {
     flex-direction: row;
     justify-content: center;
-    margin-bottom: 10px;
+    position: fixed;
+    bottom: 20px;
   }
 
   .nav__main-menu {
@@ -182,7 +166,7 @@ $borderBotton: $borderBottonHeight solid $color1;
 
 //SM Devices
 @media (max-width: 300px) {
-  $header-height: 60px;
+  $header-height: 60px !global;
   .header {
     border-bottom: $borderBotton;
     height: $header-height;
@@ -221,7 +205,7 @@ $borderBotton: $borderBottonHeight solid $color1;
 
 // Mobile devices
 
-@media (min-width: 300px) and (max-width: 860px) {
+@media (min-width: 300px) and (max-width: 858px) {
   $searchAreaHeith: 50px;
 
   .header {
@@ -248,7 +232,7 @@ $borderBotton: $borderBottonHeight solid $color1;
     }
     .header__seach-area {
       position: absolute;
-      top: calc(#{$header-height} - 2px);
+      top: calc(#{$header-height} - 12px);
       width: 100%;
       background: $backgroundColor;
       height: $searchAreaHeith;
@@ -267,11 +251,13 @@ $borderBotton: $borderBottonHeight solid $color1;
   }
 }
 //Table devices
-@media (min-width: 860px) {
+@media (min-width: 859px) {
   $borderBottonHeight: 5px;
   $borderBotton: $borderBottonHeight solid $color1;
+  $header-height: calc(#{$header-height} + 30px) !global;
+
   .header {
-    height: calc(#{$header-height} + 30px);
+    height: $header-height;
     border-bottom: $borderBotton;
   }
 
@@ -432,4 +418,39 @@ $borderBotton: $borderBottonHeight solid $color1;
   }
 }
 
+@media (min-width: 3840px) {
+  $header-height: 120px !global;
+  .header {
+    height: $header-height;
+    font-size: 39px;
+  }
+  .header {
+    .icon {
+      font-size: 39px;
+    }
+    .header__title-nameapp {
+      font-size: 60px;
+    }
+
+    .nav__center-menu {
+      width: 100%;
+    }
+
+    .header__seach-area {
+      $height: 50px;
+      $padding: 8px;
+      .input__search {
+        width: calc(100% - #{$padding});
+        $borderHeight: 7px;
+        height: calc(#{$height} - (#{$borderHeight} * 2));
+        font-size: 30px;
+      }
+
+      button {
+        height: $height;
+        font-size: 28px;
+      }
+    }
+  }
+}
 // Tablet devices

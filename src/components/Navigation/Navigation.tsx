@@ -25,6 +25,7 @@ export default function Navigation() {
     if (toDo === "open") {
       mobileMenu.classList.remove("hidden");
       setTimeout(() => {
+        document.body.style.overflowY = "hidden";
         mobileMenu.classList.remove("visuallyhidden");
       }, 20);
     } else {
@@ -33,6 +34,7 @@ export default function Navigation() {
         "transitionend",
         function () {
           mobileMenu.classList.add("hidden");
+          document.body.style.overflowY = "auto";
         },
         {
           capture: false,
@@ -62,18 +64,20 @@ export default function Navigation() {
   }, [location, closeIfIsOpenMenu]);
 
   return (
-    <div className="header" onClick={() => {}}>
+    <div className="header">
       <div className="container header__container">
         <HeaderTitle nameApp={NAME_APP} className="mobile sm" />
         <div className="header__show-nav-button" onClick={swithMenu}>
           <TiThMenu />
-          {/* <span>show</span> */}
         </div>
         <div className="nav__no-mobile header__nav">
           <NavLinks nameApp={NAME_APP} />
         </div>
       </div>
-      <div className={`nav__mobile header__nav hidden`} ref={mobileMenuRef}>
+      <div
+        className={`nav__mobile header__nav hidden visuallyhidden`}
+        ref={mobileMenuRef}
+      >
         <NavLinks nameApp={NAME_APP} />
       </div>
       ) <SearchBar className="mobile" container />
