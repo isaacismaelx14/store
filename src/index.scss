@@ -1,6 +1,9 @@
+@import "./styles/variables.scss";
 * {
   margin: 0;
   padding: 0;
+  // box-sizing: border-box;
+  font-family: $RobotoFont;
 }
 body {
   margin: 0;
@@ -64,4 +67,66 @@ input {
   -moz-border-radius: 100px 100px 0 0;
   -webkit-border-radius: 100px 100px 0 0;
   border-radius: 100px 100px 0 0;
+}
+
+.page_header__title {
+  // width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 45px;
+  margin: auto;
+  text-align: center;
+  font-weight: 600;
+  border-bottom: 5px solid $backgroundColor;
+  color: #fff;
+  background: $color2;
+}
+
+.container-flex {
+  display: flex;
+}
+
+.container-flex.center {
+  align-items: center;
+  justify-content: center;
+}
+
+.container-flex.column {
+  flex-direction: column;
+}
+
+.btn {
+  border: none !important;
+  text-decoration: none;
+  border-radius: 15px;
+  padding: 5px 10px;
+  width: 50%;
+  cursor: pointer;
+}
+
+.btn.btn-red {
+  background: $color3;
+  color: #fff;
+}
+
+.btn.btn-green {
+  background: rgb(14, 163, 0);
+  color: #fff;
+}
+.btn.btn-red:hover {
+  background: $color2;
+  color: #fff;
+}
+
+.btn.btn-green:hover {
+  background: rgb(83, 255, 67);
+  color: #fff;
+}
+
+@media only screen and (min-width: 750px) {
+  .container-flex.column.responsive {
+    flex-direction: row;
+  }
 }

@@ -1,0 +1,131 @@
+@import "../../../styles/variables.scss";
+
+button.btn__form {
+  height: 25px;
+  padding: 5px 10px;
+  border-radius: 15px;
+  border: 1px solid #fff;
+  border-bottom: 3px solid #fff;
+  color: #fff;
+}
+button.btn__form {
+  border: none;
+  width: 50%;
+  margin: auto;
+  height: 40px;
+  background: $backgroundColor;
+  border-radius: 15px;
+  border: 1px solid #fff;
+  border-top: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+}
+
+button.btn__form:hover {
+  filter: brightness(1.5);
+  background: $backgroundColor2;
+  cursor: pointer;
+}
+.login {
+  height: 100vh;
+  //   background:
+  background: $gradient1;
+}
+
+.login {
+  .login__container {
+    padding-top: 100px;
+    height: 100%;
+    width: 100%;
+  }
+
+  .login__header {
+    padding-top: 30px;
+    text-align: center;
+    width: 100%;
+    font-size: 44px;
+    font-family: $RalewayFont;
+    font-weight: 500;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .login__header {
+    span.title {
+      font-weight: bold;
+    }
+    span.sub-title {
+      font-size: 16px;
+    }
+
+    span {
+      a {
+        color: $backgroundColor;
+        text-decoration: none;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.login__body {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.login__body {
+  .login__form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 80%;
+    margin: auto;
+  }
+  .login__form {
+    input {
+      background: transparent;
+      margin-bottom: 10px;
+    }
+    input {
+      height: 25px;
+      padding: 5px 10px;
+      border-radius: 15px;
+      border: 1px solid #fff;
+      border-bottom: 3px solid #fff;
+      color: #fff;
+    }
+
+    input::placeholder {
+      color: #fff;
+    }
+  }
+}
+
+@media (min-width: 750px) {
+  .login {
+    display: flex;
+  }
+  .login {
+    .login__container {
+      margin: auto;
+      max-width: 60%;
+      max-height: 80%;
+    }
+  }
+}
+
+@media (min-width: 1150px) {
+  .login {
+    padding-top: 30px;
+  }
+  .login {
+    .login__container {
+      margin: auto;
+      max-width: 400px;
+      max-height: 80%;
+    }
+  }
+}

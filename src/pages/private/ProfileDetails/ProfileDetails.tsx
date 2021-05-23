@@ -1,7 +1,12 @@
+import ShowUsername from "../../../components/ShowUsername";
+import "./styles/profileDetails.scss";
+
 export default function ProfileDetails() {
   return (
-    <div>
-      <h2>ProfileDetails</h2>
+    <div className="Profile-Details">
+      <h2>
+        <ShowUsername />
+      </h2>
     </div>
   );
 }

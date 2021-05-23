@@ -1,0 +1,33 @@
+@import "../../../styles/variables.scss";
+.products {
+  min-height: 100vh;
+  padding-top: 90px;
+  background: $color5;
+}
+
+.products {
+  .products__header {
+    height: 130px;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .products__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  .products {
+    .products__container {
+      .product__item {
+        margin: 10px 10px;
+      }
+    }
+  }
+}

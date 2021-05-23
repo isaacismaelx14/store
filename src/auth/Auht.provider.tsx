@@ -8,15 +8,15 @@ export const AuthContext: Context<IAuthContext> =
   createContext<IAuthContext>(DefaultValue);
 
 export default function AuhtProvider({ children }: any): JSX.Element {
-  const [user, setUser] = useState<IUser | null>(null);
-  // const [user, setUser] = useState<IUser | null>({
-  //   id: 1,
-  //   names: "isaac ismael",
-  //   last_names: "martinez medrano",
-  //   email: "test@test.local",
-  //   sex: 1,
-  //   type: 0,
-  // });
+  // const [user, setUser] = useState<IUser | null>(null);
+  const [user, setUser] = useState<IUser | null>({
+    id: 1,
+    names: "isaac ismael",
+    last_names: "martinez medrano",
+    email: "test@test.local",
+    sex: 1,
+    type: 0,
+  });
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   //todo: add (data: ILoginData)
 

@@ -4,6 +4,10 @@ import ProductItem, {
   IProducts,
 } from "../../components/ProductItem/ProductItem";
 import CategoryItem from "../../components/CategoryItem/CategoryItem";
+import useAppData from "../../hooks/useAppData";
+import useAuth from "../../auth/useAuth";
+import ShowUsername from "../../components/ShowUsername";
+import { useEffect } from "react";
 
 const products: IProducts[] = [
   {
@@ -52,17 +56,38 @@ const Categories = [
   "Games",
 ];
 export default function Home() {
+  const { setProducts } = useAppData();
+  const { isLoggedIn } = useAuth();
+  useEffect(() => {
+    setProducts(products);
+  }, [setProducts]);
   return (
     <>
       <section className="home">
         <div className="home__header mobile">
+          <div className="header__bg"></div>
+          <div className="header__bg-color"></div>
           <div className="home__header-tite ">
-            <span>Welcome to the store</span>
+            {isLoggedIn ? (
+              <span>
+                Welcome <ShowUsername /> to the store
+              </span>
+            ) : (
+              <span>Welcome to the store</span>
+            )}
           </div>
         </div>
         <div className="home__header no-mobile">
+          <div className="header__bg"></div>
+          <div className="header__bg-color"></div>
           <div className="home__header-tite ">
-            <span>Welcome to the store</span>
+            {isLoggedIn ? (
+              <span>
+                Welcome <ShowUsername showOnlyName /> to the store
+              </span>
+            ) : (
+              <span>Welcome to the store</span>
+            )}
           </div>
         </div>
         <div className="home__container">

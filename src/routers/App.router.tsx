@@ -1,10 +1,10 @@
 import { Route, Switch } from "react-router";
 import Home from "../pages/home";
-import Cart from "../pages/cart";
-import Login from "../pages/login";
-import Product from "../pages/product";
-import Stores from "../pages/stores";
-import Register from "../pages/register";
+import Cart from "../pages/Cart";
+import Login from "../pages/Login";
+import Product from "../pages/Product";
+import Stores from "../pages/Stores";
+import Register from "../pages/Register";
 import Products from "../pages/Products";
 import NotFound from "../pages/NotFound";
 import Profile from "../pages/private/Profile";
