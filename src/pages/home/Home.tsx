@@ -55,12 +55,14 @@ const Categories = [
   "Sport",
   "Games",
 ];
+
 export default function Home() {
   const { setProducts } = useAppData();
   const { isLoggedIn } = useAuth();
   useEffect(() => {
     setProducts(products);
   }, [setProducts]);
+
   return (
     <>
       <section className="home">

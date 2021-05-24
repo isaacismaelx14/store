@@ -198,6 +198,10 @@
 }
 
 @media only screen and (max-width: 300px) {
+  .home .sticky-title {
+    top: 50px;
+  }
+
   .home {
     .no-mobile {
       display: none;

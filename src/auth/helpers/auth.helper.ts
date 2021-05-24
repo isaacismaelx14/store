@@ -19,9 +19,10 @@ export interface ILoginData {
 
 export interface IAuthContext {
   user: IUser | null;
-  login: any;
+  login: (a: ILoginData) => void | any;
   isLoggedIn: boolean;
   logout: any;
+  token: string | null;
 }
 
 const defaultFuncion = (fun: string) =>
@@ -32,4 +33,5 @@ export const DefaultValue: IAuthContext = {
   login: () => defaultFuncion("login"),
   logout: () => defaultFuncion("logout"),
   isLoggedIn: false,
+  token: null,
 };

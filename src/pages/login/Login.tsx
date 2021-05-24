@@ -4,10 +4,10 @@ import useAuth from "../../auth/useAuth";
 import { routes } from "../../helpers/routes.helper";
 import { Link } from "react-router-dom";
 export default function Login() {
-  const { handleSubmit } = useForm();
+  const { handleSubmit, register } = useForm();
   const { login } = useAuth();
-  const onSubmit = () => {
-    login();
+  const onSubmit = (formData: any) => {
+    login({ email: formData.email, password: formData.password });
   };
 
   return (
@@ -25,11 +25,13 @@ export default function Login() {
               type="email"
               className="form__input email"
               placeholder="email"
+              {...register("email")}
             />
             <input
               type="password"
               className="form__input password"
               placeholder="password"
+              {...register("password")}
             />
             <button className="btn__form">Submit</button>
           </form>
