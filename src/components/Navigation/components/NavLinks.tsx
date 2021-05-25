@@ -50,12 +50,12 @@ export default function NavLinks({ nameApp }: IProps) {
           <>
             <NavLink
               to={routes.profile.details}
-              className="nav__item header__nav-item btn btn-left"
+              className="nav__item header__nav-item btn-left nav-btn"
               activeClassName="nav__item-active"
               children={<ShowUsername />}
             />
             <span
-              className="nav__item header__nav-item btn btn-right"
+              className="nav__item header__nav-item btn-right nav-btn"
               children="Logout"
               onClick={logout}
             />
@@ -64,14 +64,14 @@ export default function NavLinks({ nameApp }: IProps) {
           <>
             <NavLink
               to={routes.login}
-              className="nav__item header__nav-item btn btn-left"
+              className="nav__item header__nav-item btn-left nav-btn"
               activeClassName="nav__item-active"
               children="Login"
               exact
             />
             <NavLink
               to={routes.register}
-              className="nav__item header__nav-item btn btn-right"
+              className="nav__item header__nav-item btn-right nav-btn"
               activeClassName="nav__item-active"
               children="Register"
               exact

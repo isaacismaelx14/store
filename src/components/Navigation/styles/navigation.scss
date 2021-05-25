@@ -30,6 +30,10 @@ $borderBotton: $borderBottonHeight solid $color1;
     color: rgb(199, 199, 199);
   }
 
+  .nav-btn {
+    padding: 5px 20px;
+  }
+
   button,
   .nav__item {
     cursor: pointer;
@@ -66,7 +70,7 @@ $borderBotton: $borderBottonHeight solid $color1;
       $borderHeight: 2px;
       margin-top: 5px;
       width: calc(80% - #{$padding});
-      height: calc(30px - (#{$borderHeight} * 2));
+      height: 30px;
       padding: 0 $padding;
       background: $color2;
       color: #fff;
@@ -402,9 +406,7 @@ $borderBotton: $borderBottonHeight solid $color1;
         margin-top: 0;
         font-size: $fontSize;
         width: calc(70% - #{$padding});
-        height: calc(
-          (#{$height} - (#{$borderHeight} * 2)) - (#{$paddingHeight} * 2)
-        );
+        height: $height;
         padding: $paddingHeight $padding;
       }
 
@@ -442,7 +444,7 @@ $borderBotton: $borderBottonHeight solid $color1;
       .input__search {
         width: calc(100% - #{$padding});
         $borderHeight: 7px;
-        height: calc(#{$height} - (#{$borderHeight} * 2));
+        height: $height;
         font-size: 30px;
       }
 

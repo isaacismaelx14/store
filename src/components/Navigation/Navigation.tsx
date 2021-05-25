@@ -74,7 +74,7 @@ export default function Navigation() {
 
   return (
     <div className="header" id="header">
-      <div className="container header__container">
+      <div className="container-fluid header__container">
         <HeaderTitle nameApp={NAME_APP} className="mobile sm" />
         <div className={`header__show-nav-button`} onClick={swithMenu}>
           <TiThMenu />

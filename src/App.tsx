@@ -8,17 +8,17 @@ import AppProvider from "./providers/App.provider";
 function App() {
   return (
     <div className="App">
-      <IconContext.Provider value={{ className: "icon" }}>
-        <AuthProvider>
-          <AppProvider>
-            <Router>
+      <Router>
+        <IconContext.Provider value={{ className: "icon" }}>
+          <AuthProvider>
+            <AppProvider>
               <Layout>
                 <AppRouter />
               </Layout>
-            </Router>
-          </AppProvider>
-        </AuthProvider>
-      </IconContext.Provider>
+            </AppProvider>
+          </AuthProvider>
+        </IconContext.Provider>
+      </Router>
     </div>
   );
 }

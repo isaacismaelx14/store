@@ -2,10 +2,12 @@ import "./styles/login.scss";
 import { useForm } from "react-hook-form";
 import useAuth from "../../auth/useAuth";
 import { routes } from "../../helpers/routes.helper";
-import { Link } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
+
 export default function Login() {
   const { handleSubmit, register } = useForm();
   const { login } = useAuth();
+
   const onSubmit = (formData: any) => {
     login({ email: formData.email, password: formData.password });
   };

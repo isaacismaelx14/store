@@ -262,7 +262,7 @@
     .home__header.no-mobile {
       position: relative;
       padding-top: 100px;
-      height: calc((100vh - #{$header-height}) - 35px);
+      height: calc(100vh);
       font-size: 40px;
       z-index: -2;
     }
