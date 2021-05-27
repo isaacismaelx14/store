@@ -3,8 +3,11 @@ import { useLocation } from "react-router-dom";
 import useAuth from "../auth/useAuth";
 import { routes } from "../helpers/routes.helper";
 
-export default function PrivateRoute(props: any): JSX.Element {
-  const { isLoggedIn } = useAuth();
+export default function PrivateRoute({
+  type: requireType,
+  ...rest
+}: any): JSX.Element {
+  const { isLoggedIn, user } = useAuth();
   const location = useLocation();
 
   if (!isLoggedIn)
@@ -13,5 +16,8 @@ export default function PrivateRoute(props: any): JSX.Element {
         to={{ pathname: routes.login, state: { from: location.pathname } }}
       />
     );
-  return <Route {...props} />;
+  if (requireType && user?.type !== undefined && user.type < requireType)
+    return <Redirect to={{ pathname: routes.home }} />;
+
+  return <Route {...rest} />;
 }

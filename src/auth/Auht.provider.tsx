@@ -1,7 +1,6 @@
 import { createContext, useCallback, useEffect, useState } from "react";
 import { Context } from "react";
 import { useHistory, useLocation } from "react-router-dom";
-import { routes } from "../helpers/routes.helper";
 import { storage } from "../services/storages.service";
 import UsersServices from "../services/user.service";
 import * as helper from "./helpers/auth.helper";
@@ -20,28 +19,22 @@ export default function AuhtProvider({ children }: any): JSX.Element {
   const location = useLocation<any>();
   const history = useHistory();
 
-  useEffect(() => {
-    if (user && location.state && location.state.from)
-      history.push(location.state.from);
-
-    setIsLoggedIn(!!user);
-  }, [user, location, history]);
-  useEffect(() => {
-    const getSaved = storage.token.getLocal();
-    if (getSaved)
-      userService.getUserData(getSaved).then((user) => setUser(user));
-  }, []);
-
   const login = async (userData: ILoginData) => {
     userService
       .login(userData)
-      .then(({ token }) => {
-        setToken(token);
-        storage.token.saveLocal(token);
-        return userService.getUserData(token);
+      .then((data) => {
+        if (data?.token) {
+          const { token } = data;
+          setToken(token);
+          storage.token.saveLocal(token);
+        } else {
+          console.log(data);
+        }
       })
-      .then((data) => setUser(data))
-      .catch((err) => console.error(err));
+      .catch((err) => {
+        console.error(err);
+        return { ...err };
+      });
   };
 
   const logout = useCallback(() => {
@@ -56,6 +49,30 @@ export default function AuhtProvider({ children }: any): JSX.Element {
     logout,
     token,
   };
+
+  useEffect(() => {
+    if (token)
+      userService.getUserData(token).then((getterUser: IUser) => {
+        const { cart } = getterUser;
+        if (cart)
+          getterUser = { ...getterUser, cart: JSON.parse(cart?.toString()) };
+
+        setUser(getterUser);
+      });
+  }, [token]);
+
+  useEffect(() => {
+    if (user && location.state && location.state.from)
+      history.push(location.state.from);
+
+    setIsLoggedIn(!!user);
+  }, [user, location, history]);
+
+  useEffect(() => {
+    const getSaved = storage.token.getLocal();
+    setToken(getSaved);
+  }, []);
+
   return (
     <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>
   );

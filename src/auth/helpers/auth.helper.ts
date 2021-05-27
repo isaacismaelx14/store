@@ -6,10 +6,15 @@ export interface IUser {
   password?: string;
   sex?: number;
   direction?: string;
-  cart?: JSON;
+  cart?: ICart[];
   birthday?: string;
   type?: number;
   created_date?: string;
+}
+
+export interface ICart {
+  productId: number;
+  count: number;
 }
 
 export interface ILoginData {

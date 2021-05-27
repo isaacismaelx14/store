@@ -13,6 +13,8 @@ import ProfileDetails from "../pages/private/ProfileDetails";
 import { routes } from "../helpers/routes.helper";
 import PrivateRoute from "./Private.route";
 import PublicRoute from "./Public.route";
+import CreateProduct from "../pages/private/admin/CreateProduct";
+import CreateSeller from "../pages/private/admin/CreateSeller";
 
 export default function AppRouter(): JSX.Element {
   return (
@@ -22,6 +24,12 @@ export default function AppRouter(): JSX.Element {
       <PublicRoute exact path={routes.login} component={Login} />
       <PublicRoute exact path={routes.register} component={Register} />
       <Route exact path={routes.products.home} component={Products} />
+      <PrivateRoute
+        exact
+        path={routes.products.add}
+        component={CreateProduct}
+        type={1}
+      />
       <Route exact path={routes.products.byId()} component={Product} />
       <Route exact path={routes.stores} component={Stores} />
       <PrivateRoute exact path={routes.profile.edit} component={EditProfile} />
@@ -31,6 +39,12 @@ export default function AppRouter(): JSX.Element {
         component={ProfileDetails}
       />
       <Route exact path={routes.profiles()} component={Profile} />
+      <PrivateRoute
+        exact
+        path={routes.seller.add}
+        component={CreateSeller}
+        type={2}
+      />
 
       <Route path="*" component={NotFound} />
     </Switch>

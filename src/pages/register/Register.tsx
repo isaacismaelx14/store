@@ -21,7 +21,6 @@ export default function Register() {
     setLoading,
     setUser,
   };
-  console.log(isRegistered);
   const checkSubTitle = !loading || !isRegistered;
   return (
     <section className="register">
@@ -117,7 +116,7 @@ function Form(props: IFormProps) {
     }
     userServices
       .setUserData(userToSend)
-      .then((res) => {
+      .then(() => {
         setLoading(false);
         setUser(userToSend);
         setIsRegistered(true);

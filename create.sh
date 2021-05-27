@@ -93,16 +93,17 @@
 # }
 # EOF
 
-mkdir src/pages/private/ProfileDetails
-cat <<EOF > src/pages/private/ProfileDetails/index.ts 
-export {default} from './ProfileDetails';
+# mkdir src/pages/private/admin/
+mkdir src/pages/private/admin/CreateSeller
+cat <<EOF > src/pages/private/admin/CreateSeller/index.ts 
+export {default} from './CreateSeller';
 EOF
 
-cat <<EOF > src/pages/private/ProfileDetails/ProfileDetails.tsx
-export default function ProfileDetails() {
+cat <<EOF > src/pages/private/admin/CreateSeller/CreateSeller.tsx
+export default function CreateSeller() {
   return (
     <div>
-      <h2>ProfileDetails</h2>
+      <h2>CreateSeller</h2>
     </div>
   );
 }

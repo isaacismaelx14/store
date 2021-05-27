@@ -1,0 +1,20 @@
+@import "../../../../../styles/variables.scss";
+
+.create-seller {
+  & {
+    min-height: 100vh;
+    padding-top: 100px;
+  }
+
+  .create-seller__header {
+    width: 100%;
+  }
+
+  .create-seller__body {
+    .create-seller__form {
+      width: 80%;
+      max-width: 600px;
+      margin: auto;
+    }
+  }
+}

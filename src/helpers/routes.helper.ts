@@ -8,9 +8,13 @@ export const routes = {
     products: {
         home: '/products',
         byId: (id?:number) => id ? `/products/${id}` : '/products/:id',
+        add: '/products/add'
     },
     profile:{
         edit:'/profile/edit',
         details: '/profile-details'
+    },
+    seller:{
+        add: '/seller/add'
     }
 }
