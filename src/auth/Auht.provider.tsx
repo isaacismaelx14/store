@@ -14,8 +14,8 @@ const userService = new UsersServices();
 
 export default function AuhtProvider({ children }: any): JSX.Element {
   const [user, setUser] = useState<IUser | null>(null);
-  const [token, setToken] = useState<string | null>(null);
-  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+  const [token, setToken] = useState<string | undefined | null>(undefined);
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean | undefined>(undefined);
   const location = useLocation<any>();
   const history = useHistory();
 
@@ -40,7 +40,8 @@ export default function AuhtProvider({ children }: any): JSX.Element {
   const logout = useCallback(() => {
     storage.token.removeLocal();
     setUser(null);
-  }, []);
+    history.push("/");
+  }, [history]);
 
   const contextValue: IAuthContext = {
     user,

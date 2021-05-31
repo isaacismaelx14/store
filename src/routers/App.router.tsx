@@ -1,4 +1,5 @@
 import { Route, Switch } from "react-router";
+import { routes } from "../helpers/routes.helper";
 import Home from "../pages/home";
 import Cart from "../pages/Cart";
 import Login from "../pages/Login";
@@ -10,11 +11,12 @@ import NotFound from "../pages/NotFound";
 import Profile from "../pages/private/Profile";
 import EditProfile from "../pages/private/EditProfile";
 import ProfileDetails from "../pages/private/ProfileDetails";
-import { routes } from "../helpers/routes.helper";
 import PrivateRoute from "./Private.route";
 import PublicRoute from "./Public.route";
 import CreateProduct from "../pages/private/admin/CreateProduct";
 import CreateSeller from "../pages/private/admin/CreateSeller";
+import Sellers from "../pages/private/admin/requests/Sellers";
+import GetOneSeller from "../pages/private/admin/requests/GetOneSeller";
 
 export default function AppRouter(): JSX.Element {
   return (
@@ -39,10 +41,17 @@ export default function AppRouter(): JSX.Element {
         component={ProfileDetails}
       />
       <Route exact path={routes.profiles()} component={Profile} />
+      <PrivateRoute exact path={routes.seller.add} component={CreateSeller} />
       <PrivateRoute
         exact
-        path={routes.seller.add}
-        component={CreateSeller}
+        path={routes.admin.requests.sellers.getAll}
+        component={Sellers}
+        type={2}
+      />
+      <PrivateRoute
+        exact
+        path={routes.admin.requests.sellers.byId()}
+        component={GetOneSeller}
         type={2}
       />
 

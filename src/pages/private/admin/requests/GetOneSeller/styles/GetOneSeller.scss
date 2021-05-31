@@ -1,0 +1,16 @@
+.admin-request-getOneSeller {
+  & {
+    min-height: 100vh;
+    padding-top: 100px;
+  }
+
+  .container__header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .conatiner__footer {
+    display: flex;
+    justify-content: space-between;
+  }
+}

@@ -15,7 +15,6 @@ export default function Login() {
   } = useForm({ resolver: loginResolver });
   const { login } = useAuth();
   const [loading, setLoading] = useState<boolean>(false);
-  const [res, setRes] = useState<string | null>(null);
 
   const onSubmit = async (formData: any) => {
     setLoading(true);
@@ -33,7 +32,6 @@ export default function Login() {
           <span className="sub-title">
             Or <Link to={routes.register}>signup</Link>
           </span>
-          <h2>{res}</h2>
         </div>
         <div className="login__body">
           <form className="login__form" onSubmit={handleSubmit(onSubmit)}>

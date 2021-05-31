@@ -1,3 +1,4 @@
+//Here you can register all routes
 export const routes = {
     home:'/',
     cart:'/cart',
@@ -16,5 +17,14 @@ export const routes = {
     },
     seller:{
         add: '/seller/add'
+    },
+    admin:{
+        requests:{
+            sellers:{
+                getAll:'/admin/requests/sellers',
+                byId: (id?:number) => id ? `/admin/requests/sellers/${id}` : '/admin/requests/sellers/:id',
+            }
+            
+        }
     }
 }

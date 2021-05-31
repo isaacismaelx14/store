@@ -1,0 +1,12 @@
+@import "../../../../../../styles/variables.scss";
+
+.admin-request-sellers {
+  & {
+    min-height: 100vh;
+    padding-top: 100px;
+  }
+
+  tr {
+    cursor: pointer;
+  }
+}

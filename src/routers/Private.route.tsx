@@ -7,17 +7,24 @@ export default function PrivateRoute({
   type: requireType,
   ...rest
 }: any): JSX.Element {
-  const { isLoggedIn, user } = useAuth();
+  const { isLoggedIn, user, token } = useAuth();
   const location = useLocation();
 
-  if (!isLoggedIn)
+  if (isLoggedIn === undefined) {
+    return <></>;
+  }
+
+  if (isLoggedIn === false && !token) {
     return (
       <Redirect
         to={{ pathname: routes.login, state: { from: location.pathname } }}
       />
     );
-  if (requireType && user?.type !== undefined && user.type < requireType)
+  }
+  if (requireType && user?.type !== undefined && user.type < requireType) {
+    console.log(user.type);
     return <Redirect to={{ pathname: routes.home }} />;
+  }
 
   return <Route {...rest} />;
 }
