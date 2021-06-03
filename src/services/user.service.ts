@@ -2,7 +2,7 @@ import axios from "axios";
 import { ILoginData, IUser } from "../auth/helpers/auth.helper";
 
 export const user = null;
-const path = "http://192.168.1.114:3001/users";
+const path = "http://localhost:3001/users";
 export default class UsersServices {
 
   private setHeader(token: string){

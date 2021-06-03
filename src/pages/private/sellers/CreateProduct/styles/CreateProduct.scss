@@ -1,0 +1,16 @@
+.temp-CreateProduct {
+  & {
+    min-height: 100vh;
+    padding-top: 100px;
+  }
+
+  .add-product__container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .add-product__form {
+    width: 80%;
+    max-width: 600px;
+  }
+}

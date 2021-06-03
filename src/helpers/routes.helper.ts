@@ -8,8 +8,7 @@ export const routes = {
     profiles: (id?:number) => id ? `/profiles/${id}` : '/profiles/:id',
     products: {
         home: '/products',
-        byId: (id?:number) => id ? `/products/${id}` : '/products/:id',
-        add: '/products/add'
+        byId: (id?:number) => id ? `/products/${id}` : '/products/:id'
     },
     profile:{
         edit:'/profile/edit',
@@ -24,7 +23,9 @@ export const routes = {
                 getAll:'/admin/requests/sellers',
                 byId: (id?:number) => id ? `/admin/requests/sellers/${id}` : '/admin/requests/sellers/:id',
             }
-            
+        },
+        product:{
+            add: '/admin/product/add'
         }
     }
 }

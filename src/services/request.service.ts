@@ -13,7 +13,7 @@ export interface ISellerRequest {
 }
 
 export default class RequestsServices {
-  private path = "http://192.168.1.114:3001/requests";
+  private path = "http://localhost:3001/requests";
   private setHeader(token: string) {
     return { headers: { Authorization: `Bearer ${token}` } };
   }

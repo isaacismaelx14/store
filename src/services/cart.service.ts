@@ -3,7 +3,7 @@ import { ICart, IUser } from "../auth/helpers/auth.helper";
 
 
 
-const path = "http://192.168.1.114:3001/users";
+const path = "http://localhost:3001/users";
 
 export class CartService {
   private setHeader(token: string) {

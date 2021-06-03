@@ -13,10 +13,10 @@ import EditProfile from "../pages/private/EditProfile";
 import ProfileDetails from "../pages/private/ProfileDetails";
 import PrivateRoute from "./Private.route";
 import PublicRoute from "./Public.route";
-import CreateProduct from "../pages/private/admin/CreateProduct";
 import CreateSeller from "../pages/private/admin/CreateSeller";
 import Sellers from "../pages/private/admin/requests/Sellers";
 import GetOneSeller from "../pages/private/admin/requests/GetOneSeller";
+import CreateProduct from "../pages/private/sellers/CreateProduct";
 
 export default function AppRouter(): JSX.Element {
   return (
@@ -26,12 +26,6 @@ export default function AppRouter(): JSX.Element {
       <PublicRoute exact path={routes.login} component={Login} />
       <PublicRoute exact path={routes.register} component={Register} />
       <Route exact path={routes.products.home} component={Products} />
-      <PrivateRoute
-        exact
-        path={routes.products.add}
-        component={CreateProduct}
-        type={1}
-      />
       <Route exact path={routes.products.byId()} component={Product} />
       <Route exact path={routes.stores} component={Stores} />
       <PrivateRoute exact path={routes.profile.edit} component={EditProfile} />
@@ -53,6 +47,13 @@ export default function AppRouter(): JSX.Element {
         path={routes.admin.requests.sellers.byId()}
         component={GetOneSeller}
         type={2}
+      />
+
+      <PrivateRoute
+        exact
+        path={routes.admin.product.add}
+        component={CreateProduct}
+        type={1}
       />
 
       <Route path="*" component={NotFound} />

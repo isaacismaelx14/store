@@ -93,26 +93,26 @@
 # }
 # EOF
 
-# mkdir src/pages/private/admin/requests
-mkdir src/pages/private/admin/requests/GetOneSeller
-cat <<EOF > src/pages/private/admin/requests/GetOneSeller/index.ts 
-export {default} from './GetOneSeller';
+mkdir src/pages/private/sellers
+mkdir src/pages/private/sellers/CreateProduct
+cat <<EOF > src/pages/private/sellers/CreateProduct/index.ts 
+export {default} from './CreateProduct';
 EOF
 
-cat <<EOF > src/pages/private/admin/requests/GetOneSeller/GetOneSeller.tsx
-  import "./styles/GetOneSeller.scss"
-export default function GetOneSeller() {
+cat <<EOF > src/pages/private/sellers/CreateProduct/CreateProduct.tsx
+  import "./styles/CreateProduct.scss"
+export default function CreateProduct() {
   return (
-    <section className="temp-GetOneSeller">
-      <h2>GetOneSeller</h2>
+    <section className="temp-CreateProduct">
+      <h2>CreateProduct</h2>
     </section>
   );
 }
 EOF
 
-mkdir src/pages/private/admin/requests/GetOneSeller/styles
-cat <<EOF > src/pages/private/admin/requests/GetOneSeller/styles/GetOneSeller.scss
-.temp-GetOneSeller{
+mkdir src/pages/private/sellers/CreateProduct/styles
+cat <<EOF > src/pages/private/sellers/CreateProduct/styles/CreateProduct.scss
+.temp-CreateProduct{
   & {
     min-height: 100vh;
     padding-top: 100px;
